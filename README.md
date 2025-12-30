@@ -1,2 +1,10 @@
-# alinadenzler.github.io
-Personal website &amp; portfolio — life sciences, data, GenAI
+# Personal Website
+
+This repository contains the source code for my personal website,
+hosted with GitHub Pages.
+
+Built with:
+- HTML
+- CSS
+
+Live at: https://alinadenzler.github.io
