@@ -10,7 +10,7 @@
   --highlight: #B51823;   /* red highlight */
   
   --stroke: 1.5px;
-  --max: 900px;
+  --max: 780px;
   --pad: clamp(24px, 4vw, 48px);
   --radius: 12px;
   --frame: 0px;
@@ -28,13 +28,14 @@ html{
   scroll-padding-top: var(--topbar-h);
 }
 
+
 /* Each main section becomes a full-screen panel */
 .section{
   min-height: calc(100vh - var(--topbar-h));
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(12px, 3vh, 28px) 0;
+  padding: clamp(12px, 3vh, 28px) var(--pad);
 }
 
 body{
@@ -64,6 +65,7 @@ body{
 /* Top nav */
 .topbar{
   position: fixed;
+  height: var(--topbar-h);
   top: 0;
   left: 0;
   width: 100%;
@@ -83,13 +85,14 @@ body{
 
 .nav{
   width: min(var(--max), 100%);
+  padding-left: calc(var(--pad) * 1);
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 32px;
-  padding: 20px 24px;
-  min-height: 72px;
+  padding: 20px calc(var(--pad) + 200px) 20px var(--pad);
+  min-height: var(--topbar-h);
   position: relative;
 }
 
@@ -108,6 +111,7 @@ body{
 .nav__cta{
   position: absolute;
   right: var(--pad);
+  top: 10px;
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -125,9 +129,44 @@ body{
   box-shadow: 0 4px 12px rgba(243,199,80,0.3);
 }
 
-/* Sections */
-.section{
-  padding: 44px var(--pad);
+/* Social icons container */
+.nav__socials{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: calc(var(--pad) + 120px); /* adjust to match Connect width */
+  display: flex;
+  gap: 12px;
+}
+
+
+/* Icon button */
+.iconBtn{
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.25);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.iconBtn svg{
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+
+.iconBtn:hover{
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.iconBtn:hover svg{
+  fill: var(--ink);
 }
 
 .sectionTitle{
@@ -282,12 +321,12 @@ body{
 /* positions (tweak to taste) */
 .sparkle--left{
   left: -22px;
-  top: 52px;
+  top: 122px;
 }
 
 .sparkle--right{
-  right: -18px;
-  top: 14px;
+  right: 172px;
+  top: -15px;
 }
 
 /* Services cards – 2 columns, 4 cards */
@@ -472,6 +511,8 @@ body{
 /* Responsive */
 @media (max-width: 780px){
   .nav{
+    top: 50%;
+    transform: translateY(-50%);
     gap: 14px;
     padding-right: calc(var(--pad) + 92px);
   }
