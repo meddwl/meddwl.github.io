@@ -237,24 +237,30 @@
             GitHub: <a class="link" href="https://github.com/meddwl" target="_blank" rel="noreferrer">github.com/meddwl</a>
           </p>
 
-          <form class="form" action="#" method="post">
-            <label class="field">
-              <span>Name</span>
-              <input type="text" name="name" required />
-            </label>
-
-            <label class="field">
-              <span>Email</span>
-              <input type="email" name="email" required />
-            </label>
-
-            <label class="field">
-              <span>Message</span>
-              <textarea name="message" rows="4" required></textarea>
-            </label>
-
-            <button class="btn btn--primary" type="submit">Send</button>
-          </form>
+          <form class="form"
+              action="https://formspree.io/f/xzddbegg"
+              method="POST">
+        
+          <input type="text" name="_gotcha" style="display:none">
+        
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" required>
+          </label>
+        
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" required>
+          </label>
+        
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="6" required></textarea>
+          </label>
+        
+          <button class="btn btn--primary" type="submit">Send</button>
+        </form>
+          
         </div>
           
       </section>
